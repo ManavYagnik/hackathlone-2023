@@ -1,0 +1,245 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	
+  }
+
+ 
+  @media screen and (max-width: 1030px) {
+	.btn{
+	  position: absolute;
+	  right: -10px;
+	  bottom: 5px;
+	  margin-right: 10px;
+	  padding: 0.25rem 0.50rem;
+	  transform: scale(0.8);
+	}
+  }
+  
+  .progress-bar-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 5px;
+  }
+  
+  .slick-prev,
+.slick-next {
+  display: none !important;
+}
+
+/* Default styles for the map container */
+.leaflet-container {
+	width: 60%;
+	height: 60vh;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+	.leaflet-container {
+	  width: 70%;
+	  height: 40vh;
+	}
+  } 
+   @media (max-width: 500px) {
+	.leaflet-container {
+	  width: 100%;
+	  height: 40vh;
+	}
+  }
+  
+
+
+
+  :root {
+	--mainColor: linear-gradient(45deg, #0042A6, #07173F);
+	--mainColorLight: #5767aa;
+	--secondaryColor: #0042A6;
+	--textColor: #eee;
+  }
+  
+  /* Navbar styles */
+  header {
+	display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  padding: 0 20px; /* Adjust padding for different screen sizes */
+  position: sticky; /* Make the Navbar sticky */
+  top: 0; /* Stick the Navbar to the top of the viewport */
+  z-index: 1000; /* Ensure the Navbar is above other elements */
+  transition: height 0.3s ease; /* Add a smooth transition for height change */
+  }
+
+/* Additional CSS for the .shrink class */
+
+
+  nav a {
+	margin: 0 1.7rem;
+	color: var(--textColor);
+	text-decoration: none;
+	font-weight: 500;
+	position: relative;
+	color: #07173F;
+	font-size: 1.1rem;
+	transition: color ease-in-out 0.1s;
+  }
+  
+  nav a:hover {
+	color: #07173F;
+  }
+
+  nav a::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -2px;
+	left: 0;
+	background-color: #07173F;
+	transition: width 0.2s ease-in-out;
+  }
+  
+  /* Modify nav a:hover to also increase the width of the underline */
+  nav a:hover {
+	color: #07173F;
+  }
+  
+  /* Add a transition to the underline width on hover */
+  nav a:hover::before {
+	width: 100%;
+  }
+  
+  
+  header .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	font-size: 2rem;
+	visibility: hidden;
+	opacity: 0;
+	
+  }
+  
+  header div,
+  nav {
+	display: flex;
+	align-items: center;
+	background-color: #eafe07;
+	padding: 0.7rem 1.5rem;
+	border-radius: 9999px;
+  }
+  
+  /* Media query for smaller screens (e.g., mobile) */
+  @media only screen and (max-width: 1024px) {
+	header .nav-btn {
+	  visibility: visible;
+	  opacity: 1;
+	}
+  
+	nav {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 1.5rem;
+	  background-color: #2E96F5;
+	  transition: transform 1s;
+	  border-radius: 0;
+	  height: 100%;
+	  width: 100%;
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  transform: translateY(-100%);
+	  z-index: 1000;
+	  overflow-x: hidden;
+	}
+  
+	header .responsive_nav {
+	  transform: translateY(0);
+	}
+  
+	nav .nav-close-btn {
+	  position: absolute;
+	  top: 2rem;
+	  right: 2rem;
+	}
+  
+	nav a {
+	  font-size: 1.5rem;
+	}
+  }
+
+/* Preloader */
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8); /* Background color with opacity */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .preloader img {
+	max-width: 200px; /* Adjust the size as needed */
+	max-height: 200px;
+  }
+  
+  .popup {
+	
+	position: fixed;
+	bottom: 0;
+	left: -100%; /* Start offscreen */
+	transition: right 0.9s ease;
+  }
+  
+  .popup img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+  }
+  
+  .popup.show {
+	display: block;
+	right: 0; /* Slide in from the right */
+  }
+  
+  /* Define the animation for sliding in */
+  @keyframes slideIn {
+	from {
+	  left: -100%; /* Start offscreen */
+	}
+	to {
+	  left: 0; /* Slide in */
+	}
+	
+  }
+  
+  .popup.slide-in {
+	animation: slideIn 0.8s forwards; /* Play the slide-in animation */
+  }
+
+  .custom_gradient {
+	background-image: linear-gradient(90deg, #eafe07, #f6f4f4);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+  }
+  
+  .glow-effect {
+	box-shadow: 0 0 10px #fff, /* white glow */
+				0 0 20px #fff,
+				0 0 30px #fff,
+				0 0 40px #fff;
+  }
